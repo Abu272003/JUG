@@ -1,0 +1,15 @@
+Disease (Patient, byssinosis):- Symptom (Patient, chest_tightness), Symptom (Patient, cough), Symptom (Patient, wheezing). 
+Pertusis is a disease whose symptoms are runny nose and mild fever. So it will be stored in the knowledge base as follow:-  Disease(Patient, pertusis):-
+Symptom(Patient, runny_nose), Symptom(Patient, mild_fever).  Pneumoconiosis  is  a  disease  whose  symptoms  are chronic cough  and shortness of  breath. 
+So  it will be stored in the knowledge base as follow:-  Disease (Patient, pneumoconiosis):- Symptom (Patient, chronic_cough), Symptom (Patient,shortness_of_breath).
+Sarcoidosis  is  a  disease  whose  symptoms  are  dry cough, shortness of breath, mild chest pain, scaly rash, fever,  red  bumps  on  legs,  sore  eyes  and  swollen 
+ankles.  So  it  will  be  stored  in  knowledge  base  as follow:- 
+Disease (Patient, sarcoidosis):-
+Symptom (Patient, dry_cough),
+Symptom (Patient, shortness_of_breath)
+Symptom (Patient, mild_chest_pain),
+Symptom (Patient, scaly_rash),
+Symptom (Patient, fever), 
+Symptom (Patient, red_bumps_on_legs), 
+Symptom (Patient, sore_eyes),
+Symptom (Patient, swollen_ankles). 

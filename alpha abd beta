@@ -1,0 +1,24 @@
+alphabeta( Pos, Alpha, Beta, GoodPos, Val) .-
+moves( Pos, Poslist), !,
+boundedbest( Poslist, Alpha, Beta, GoodPos, Val);
+staticval( Pos, Val).
+boundedbest( [Pos I Poslistf, Alpha, Beta, GoodPos, GoodVat) :-
+alphabeta( Pos, Alpha, Beta, _, Val),
+goodenough( Poslist, Alpha, Beta, Pos, Val, GoodPos, GoodVal).
+goodenough( [J, -, -, Pos, Val, Pos, Val) '- !. Vo No other candidate
+goodenough( -, Alpha, Beta, Pos, Val, Pos, Val) .-
+min-to-rnove( Pos), Val ) Beta, !; Vo Maximizer attained upper bound
+marto-mov{ Pos), Val ( Alpha, l. Vo Minimizer attained lower bound
+goodenough( Poslist, Alpha, Beta, Pos, Val, GoodPos, GoodVal) :-
+newbounds( Alpha, Beta, Pos, Val, NewAlpha, NewBeta), Vo Refine bounds
+boundedbes( Poslist, NewAlpha, NewBeta, Posl, Vall),
+betterof( Pos, Val, Posl, Vall, GoodPos, GoodVal).
+newbounds( Alpha, Beta, Pos, Val, Val, Beta) :-
+min-to-rnove( Pos), Vd > Alpha, t. Vo Maximizer increased lower bound
+newbounds( Alpha, Beta, Pos, Val, Alpha, Vat) :-
+marto-rnove( Pos), Val < Beta, !. Vo ll'dinimizer decreased upper bound
+newbounds( Alpha, Beta, -, -, Alpha, Beta).
+betterof( Pos, Val, Posl, Val1, Pos, Val) :-
+min-to-rnove( Pos), Vd > Vall, !;
+marto:nove( Pos), Val < Vall, !.
+betterof( -, -, Pos1, Val1, Posl, Vall).
